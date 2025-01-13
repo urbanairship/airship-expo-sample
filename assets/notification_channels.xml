@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <NotificationChannel
+        id="com.urbanairship.my_custom_channel"
+        name="custom name"
+        description="my_custom_channel_description"
+        importance="3" />
+</resources>

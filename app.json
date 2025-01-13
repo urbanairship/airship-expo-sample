@@ -1,0 +1,75 @@
+{
+  "expo": {
+    "name": "AirshipExpoExample",
+    "slug": "AirshipExpoExample",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/airship_expo_example_icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/airship_expo_example_screen.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.urbanairship.sample",
+      "infoPlist": {
+        "NSSupportsLiveActivities": true
+      },
+      "appleTeamId": "TeamID"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/airship_expo_example_icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.urbanairship.sample"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/airship_expo_example_icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "14.0",
+            "useFrameworks": "static"
+          }
+        }
+      ],
+      [
+        "airship-expo-plugin",
+        {
+          "android": {
+            "icon": "./assets/images/airship_expo_example_icon.png",
+            "customNotificationChannels": "./assets/notification_channels.xml",
+            "airshipExtender": "./assets/AirshipExtender.kt"
+          },
+          "ios": {
+            "mode": "development",
+            "notificationServiceTargetName": "NotificationServiceExtension",
+            "notificationService": "./assets/NotificationService.swift",
+            "notificationServiceInfo": "./assets/NotificationServiceExtension-Info.plist",
+            "developmentTeamID": "TeamID",
+            "airshipExtender": "./assets/AirshipPluginExtender.swift"
+          }
+        }
+      ],
+      "@bacons/apple-targets"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2a1c916e-1a87-439f-9ab4-b5dc675fb961"
+      }
+    }
+  }
+}
